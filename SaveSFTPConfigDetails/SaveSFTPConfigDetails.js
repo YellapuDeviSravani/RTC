@@ -191,7 +191,7 @@ function ($scope,ngDialog,$http,$timeout) {
                         $scope.operationInProgress = false;
                         $scope.debugErrorJSONResponse = data;
                         $scope.error = 'Error in finding process variables data for GetRTCWSDiagnostics process case';
-                        break;
+                        clearInterval(interval);
                     });
                 }, 500);  // interval
 			}, function(failure){ // instantiate
