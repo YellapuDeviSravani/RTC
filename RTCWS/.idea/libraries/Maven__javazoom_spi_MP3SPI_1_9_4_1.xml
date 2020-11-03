@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: javazoom.spi:MP3SPI:1.9.4.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/javazoom/spi/MP3SPI/1.9.4.1/MP3SPI-1.9.4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/javazoom/spi/MP3SPI/1.9.4.1/MP3SPI-1.9.4.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/javazoom/spi/MP3SPI/1.9.4.1/MP3SPI-1.9.4.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -22,7 +22,7 @@ import net.sourceforge.jaad.adts.ADTSDemultiplexer;
  * @author rjrjswrdvimalla
  *
  */
-public class AACProcessor extends AudioProcessorFactory{
+public class AACProcessor<ADTSDemultiplexer> extends AudioProcessorFactory{
 
 	public final static Logger LOG = Logger.getLogger(AACProcessor.class.getName());
 
