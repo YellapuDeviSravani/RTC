@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="RTCWS" target="7" />
+      <module name="RTCWS" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
