@@ -8,13 +8,13 @@ import java.util.logging.Logger;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.SourceDataLine;
 
+
 import org.apache.commons.vfs2.FileObject;
 
 import com.rtcapp.ws.AudioProcessorFactory;
 
 import net.sourceforge.jaad.aac.Decoder;
 import net.sourceforge.jaad.aac.SampleBuffer;
-import net.sourceforge.jaad.adts.ADTSDemultiplexer;
 
 /**
  * This class is used to process the files that are not yet supported
@@ -29,7 +29,7 @@ public class AACProcessor<ADTSDemultiplexer> extends AudioProcessorFactory{
 	@SuppressWarnings("finally")
 	public long getAudioProcessor(FileObject remoteFile) throws Exception{
 
-		LOG.log(Level.INFO, "***********Fetching the input stream fromt the SFTP file: " + remoteFile.getPublicURIString() + " to normal File");
+		LOG.log(Level.INFO, "***********Fetching the input stream fromt the SFTP file: " + remoteFile.getURL().toString() + " to normal File");
 
 		InputStream stream = remoteFile.getContent().getInputStream();
 
@@ -40,7 +40,7 @@ public class AACProcessor<ADTSDemultiplexer> extends AudioProcessorFactory{
 
 		LOG.log(Level.INFO, "***********Calculating the duration of the " + remoteFile.getName().getBaseName());
 
-		ADTSDemultiplexer adts = new ADTSDemultiplexer(stream);
+		net.sourceforge.jaad.adts.ADTSDemultiplexer adts = new net.sourceforge.jaad.adts.ADTSDemultiplexer(stream);
 
 		LOG.log(Level.INFO, "***********Fetching the decoder information");
 
@@ -75,7 +75,7 @@ public class AACProcessor<ADTSDemultiplexer> extends AudioProcessorFactory{
 		}finally{
 			final long duration = (long)( 1000 / sampleRate * 1024  * frames );
 
-			LOG.log(Level.INFO, "***********Calculated Duration of AAC file: " + remoteFile.getPublicURIString() + " is " + duration + " milliSeconds");
+			LOG.log(Level.INFO, "***********Calculated Duration of AAC file: " + remoteFile.getURL().toString() + " is " + duration + " milliSeconds");
 
 			return duration;
 		}

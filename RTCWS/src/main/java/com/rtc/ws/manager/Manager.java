@@ -210,7 +210,7 @@ public class Manager{
 
 	}
 
-	public String getStatus(){
+	public String getStatus() {
 		StandardFileSystemManager manager = new StandardFileSystemManager();
 		JsonObject ele = new JsonObject();
 		FileObject originalFileWithTMP = null;
@@ -252,8 +252,8 @@ public class Manager{
 			}
 
 			if(null != originalFileWithTMP){
-				ele.addProperty("url",originalFileWithTMP.getPublicURIString()); 
 				try {
+					ele.addProperty("url",originalFileWithTMP.getURL().toString());
 					originalFileWithTMP.close();
 				} catch (FileSystemException e) {
 					LOG.severe("Failed while closing the file:" + originalFileWithTMP.getName() + e.getMessage());
@@ -318,7 +318,7 @@ public class Manager{
 
 			LOG.log(Level.INFO, "***********Audio duration for " + fileName + " is " + duration + " milliseconds");
 
-			_url = remoteFile.getPublicURIString().replace(STATE.COMPLETED.toString(), "");
+			_url = remoteFile.getURL().toString().replace(STATE.COMPLETED.toString(), "");
 			_status = 1;
 			_size = remoteFile.getContent().getSize();
 			remoteFile.close();
@@ -402,7 +402,7 @@ public class Manager{
 						this.fileName
 						), createDefaultOptions());
 
-		LOG.log(Level.INFO, "***********SFTP File is located successfully @ " + remoteFile.getPublicURIString());
+		LOG.log(Level.INFO, "***********SFTP File is located successfully @ " + remoteFile.getURL().toString());
 
 		return remoteFile;
 	}

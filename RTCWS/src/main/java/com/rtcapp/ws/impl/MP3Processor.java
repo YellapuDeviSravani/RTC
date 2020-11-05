@@ -58,7 +58,7 @@ public class MP3Processor extends AudioProcessorFactory{
 	@Override
 	public long getAudioProcessor(FileObject remoteFile) throws Exception{
 
-		LOG.log(Level.INFO, "***********Casting the SFTP File: " + remoteFile.getPublicURIString() + " to normal File");
+		LOG.log(Level.INFO, "***********Casting the SFTP File: " + remoteFile.getURL().toString() + " to normal File");
 
 		String path = AudioProcessorFactory.getPath(remoteFile);
 		

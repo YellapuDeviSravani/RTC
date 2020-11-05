@@ -25,7 +25,7 @@ public class MP4Processor extends AudioProcessorFactory {
 
 		try {
 
-			LOG.info("***********Fetching the actual path for " + remoteFile.getPublicURIString());
+			LOG.info("***********Fetching the actual path for " + remoteFile.getURL().toString());
 
 			String path = AudioProcessorFactory.getPath(remoteFile);
 
@@ -50,7 +50,7 @@ public class MP4Processor extends AudioProcessorFactory {
 
 			return duration;
 		} catch (Exception e) {
-			LOG.severe("***********Exception while calculatin the audio length of " +  remoteFile.getPublicURIString());
+			LOG.severe("***********Exception while calculatin the audio length of " +  remoteFile.getURL().toString());
 			throw e;
 		} 
 

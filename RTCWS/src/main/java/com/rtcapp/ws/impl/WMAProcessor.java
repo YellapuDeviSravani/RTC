@@ -67,7 +67,7 @@ public class WMAProcessor extends AudioProcessorFactory {
 	public long getAudioProcessor(FileObject remoteFile) throws Exception {
 		AudioFile f;
 		try {
-			LOG.log(Level.INFO, "***********Casting the SFTP File: " + remoteFile.getPublicURIString() + " to normal File");
+			LOG.log(Level.INFO, "***********Casting the SFTP File: " + remoteFile.getURL().toString() + " to normal File");
 
 			String path = AudioProcessorFactory.getPath(remoteFile);
 			
@@ -79,14 +79,14 @@ public class WMAProcessor extends AudioProcessorFactory {
 
 			LOG.log(Level.INFO, "***********Converting normal file to audio file with extension " + ext);
 
-			f = AudioFileIO.readAs(file, ext);
+			f = AudioFileIO.read(file);
 
 			LOG.log(Level.INFO, "***********Fetching the header from the audio file");
-			long duration = (long) f.getAudioHeader().getPreciseTrackLength() * 1000;
-			LOG.log(Level.INFO, "***********Calculated Duration of WMA file: " + remoteFile.getPublicURIString() + " is " + duration + " milliSeconds");
+			long duration = (long) f.getAudioHeader().getTrackLength() * 1000;
+			LOG.log(Level.INFO, "***********Calculated Duration of WMA file: " + remoteFile.getURL().toString() + " is " + duration + " milliSeconds");
 			return duration;
 		} catch (Exception e) {
-			LOG.severe("***********Exception while calculatin the audio length of " +  remoteFile.getPublicURIString());
+			LOG.severe("***********Exception while calculatin the audio length of " +  remoteFile.getURL().toString());
 			throw e;
 		} 
 	}
