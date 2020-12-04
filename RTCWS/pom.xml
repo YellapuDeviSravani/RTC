@@ -8,9 +8,9 @@
     <groupId>groupId</groupId>
     <artifactId>RTCWS</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+ <packaging>war</packaging>
     <properties>
-        <packaging>jar</packaging>
+       
         <!-- set the java version here -->
         <version.java>8</version.java>
     </properties>
@@ -54,7 +54,7 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
+            <version>3.0-alpha-1</version>
             <scope>provided</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.googlecode.soundlibs/tritonus-share -->
@@ -69,7 +69,7 @@
             <artifactId>jlayer</artifactId>
             <version>1.0.1</version>
         </dependency>
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javazoom.spi/MP3SPI &ndash;&gt;-->
+<!--       https://mvnrepository.com/artifact/javazoom.spi/MP3SPI -->
         <!-- https://mvnrepository.com/artifact/javazoom/mp3spi -->
         <dependency>
             <groupId>javazoom</groupId>
@@ -84,11 +84,11 @@
             <version>0.2.5</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/net.sourceforge.jaadec/jaad -->
-        <dependency>
+      <!--    <dependency>
             <groupId>net.sourceforge.jaadec</groupId>
             <artifactId>jaad</artifactId>
             <version>0.8.4</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>net.jthink</groupId>
             <artifactId>jaudiotagger</artifactId>
@@ -99,6 +99,11 @@
             <artifactId>jersey-client</artifactId>
             <version>2.5.1</version>
         </dependency>
+<dependency>
+    <groupId>org.glassfish.jersey.containers</groupId>
+    <artifactId>jersey-container-servlet</artifactId>
+    <version>3.0.0-M6</version>
+</dependency>
 
     </dependencies>
     <repositories>
@@ -114,6 +119,7 @@
             <id>jaudiotagger-repository</id>
             <url>https://dl.bintray.com/ijabz/maven</url>
         </repository>
+
     </repositories>
     <build>
         <plugins>
@@ -125,6 +131,13 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+            <plugin>            
+  				<groupId>org.apache.maven.plugins</groupId>
+  				<artifactId>maven-war-plugin</artifactId>
+  				<configuration>
+  				  <webXml>WebContent\WEB-INF\web.xml</webXml>        
+  				</configuration>
+</plugin>
         </plugins>
     </build>
     

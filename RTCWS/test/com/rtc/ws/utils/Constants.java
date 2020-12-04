@@ -5,11 +5,11 @@ public interface Constants {
 	
 	String p_dest_hostname = "localhost";
 	int p_dest_port = 22;
-	String p_dest_username = "";
-	String p_dest_password = "";
-	String p_dest_Folder = "/download";
-	String p_dest_Path_to_Root = "/";
-	String path_to_ffmpeg_bin = "/Volumes/My Backup/Apps/ffmpeg-4.0-macos64-static/bin/";
+	String p_dest_username = "sabi";
+	String p_dest_password = "Aars541";
+	String p_dest_Folder = "C:\\Users\\Saki\\Downloads";
+	String p_dest_Path_to_Root = "C:\\SftpRoot";
+	String path_to_ffmpeg_bin = "C:\\Program Files\\ffmpeg\\bin";
 	/* RTC OWN SFTP SERVER DETAILS: END */
 	
 }
