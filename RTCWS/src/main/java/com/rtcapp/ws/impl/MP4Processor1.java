@@ -42,9 +42,15 @@ public class MP4Processor1 {
         LOG.severe("***********Fetching the duration from the audio file format fetched for " + fileName);;
 
         Long duration = (Long) baseFileFormat.properties().get("duration");
+        if(fileName.contains("mp4")) {
+            LOG.log(Level.INFO, "***********Calculated Duration of MP4 file: " + fileName + " is " + duration + " milliSeconds");
 
-        LOG.log(Level.INFO, "***********Calculated Duration of MP3 file: " + fileName+ " is " + duration + " milliSeconds");
+        }
+        if(fileName.contains("m4a")){
+            LOG.log(Level.INFO, "***********Calculated Duration of M4A file: " + fileName + " is " + duration + " milliSeconds");
+
+
+        }
         return duration;
-
     }
 }
