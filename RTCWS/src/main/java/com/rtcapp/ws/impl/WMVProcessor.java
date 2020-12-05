@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class WMVProcessor {
-    public final static Logger LOG = Logger.getLogger(WMAProcessor.class.getName());
+    public final static Logger LOG = Logger.getLogger(WMVProcessor.class.getName());
     private final static AsfHeaderReader FULL_READER;
     static {
         final List<Class<? extends ChunkReader>> readers = new ArrayList<Class<? extends ChunkReader>>();
@@ -54,7 +54,7 @@ public class WMVProcessor {
         else
         {
             LOG.severe("***********No file header is found. " + fileName + " is an invalid WMA file");
-            throw new Exception("Invalid WMA file.");
+            throw new Exception("Invalid WMV file.");
 
         }
 
