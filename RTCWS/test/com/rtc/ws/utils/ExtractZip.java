@@ -61,7 +61,7 @@ public class ExtractZip {
 				final String uri = "zip:file:" + path + "!/" + name;
 
 				FileObject resolvedFile = fsManager.resolveFile(uri);
-				manager = new Manager(null,null,resolvedFile.getURL().toString());
+				manager = new Manager(null,null,resolvedFile.getPublicURIString());
 				String result = manager.getDuration();
 
 				JsonParser parser = new JsonParser();
