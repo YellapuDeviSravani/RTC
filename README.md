@@ -18,27 +18,27 @@ src
 	│  └──java
 	│       └─com
 	│	   └─-rtc
-	│			│
-	│			└──ws
-	│			    │
-	│			    └───connector
-	│					│	      │
-	│					│	      └─SFTPConnector
-  │			    └───controller
-	│					│	      │
-	│					│	      └─RtcownsftpsrvrController
-  │			    └───entity
-	│					│	      │
-	│					│	      └─Rtcownsftpsrvr
-  │			    └───repository
-	│					│	      │
-	│					│	      └─RtcownsftpsrvrRepository
-  │			    └───service
-	│					│	      │
-	│					│	      └─RtcownsftpsrvrService
-	│					│
-	│					│
-	│					└──SpringBootTomcatApplication
+	│		│
+	│		└──ws
+	│		│
+	│		└───connector
+	│		│	      │
+	│		│	      └─SFTPConnector
+   	│		└───controller
+	│		│	      │
+	│		│	      └─RtcownsftpsrvrController
+   	│		└───entity
+	│		│	      │
+	│		│	      └─Rtcownsftpsrvr
+   	│		└───repository
+	│		│	      │
+	│		│	      └─RtcownsftpsrvrRepository
+  	│		└───service
+	│		│	      │
+	│		│	      └─RtcownsftpsrvrService
+	│		│
+	│		│
+	│		└──SpringBootTomcatApplication
 	│	
 	└── resources
 		└────────application.properties
