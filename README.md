@@ -13,27 +13,27 @@ http://localhost:8080/RTCWS/swagger-ui.html#
 ### Project Structure 
 	
 ```	
-  src	
+src	
    └── main
-	│ └──java
+	│  └──java
 	│       └─com
-	│	   └──rtc
+	│	   └─-rtc
 	│	       │
 	│	       └───────ws
 	│	 		│
-	│	 		│───connector
+	│	 		└───connector
 	│	 		│	 │
 	│	 		│	 └─SFTPConnector
-	│	 		│───controller
+	│	 		└───controller
 	│	 		│	 │
 	│	 		│	 └─RtcownsftpsrvrController
-	│	 		│───entity
+	│	 		└───entity
 	│	 		│	 │
 	│	 		│	 └─Rtcownsftpsrvr
-	│	 		│───repository
+	│	 		└───repository
 	│	 		│	 │
 	│	 		│	 └─RtcownsftpsrvrRepository
-	│	 		│───service
+	│	 		└───service
 	│	 		│	 │
 	│	 		│	 └─RtcownsftpsrvrService
 	│	 		│
