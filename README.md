@@ -22,20 +22,20 @@ src
 	│		└──ws
 	│		│
 	│		└───connector
-	│		│	      │
-	│		│	      └─SFTPConnector
+	│		│	 │
+	│		│	 └─SFTPConnector
    	│		└───controller
-	│		│	      │
-	│		│	      └─RtcownsftpsrvrController
+	│		│	 │
+	│		│	 └─RtcownsftpsrvrController
    	│		└───entity
-	│		│	      │
-	│		│	      └─Rtcownsftpsrvr
+	│		│	 │
+	│		│	 └─Rtcownsftpsrvr
    	│		└───repository
-	│		│	      │
-	│		│	      └─RtcownsftpsrvrRepository
+	│		│	 │
+	│		│	 └─RtcownsftpsrvrRepository
   	│		└───service
-	│		│	      │
-	│		│	      └─RtcownsftpsrvrService
+	│		│	 │
+	│		│	 └─RtcownsftpsrvrService
 	│		│
 	│		│
 	│		└──SpringBootTomcatApplication
