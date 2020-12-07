@@ -1,4 +1,4 @@
-package com.rtc.ws.rtcownsftpsrvr.entity;
+package com.rtc.ws.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

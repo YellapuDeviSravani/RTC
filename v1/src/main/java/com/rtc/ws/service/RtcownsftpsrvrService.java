@@ -1,11 +1,12 @@
-package com.rtc.ws.rtcownsftpsrvr.service;
+package com.rtc.ws.service;
 
+
+import com.rtc.ws.entity.Rtcownsftpsrvr;
+import com.rtc.ws.repository.RtcownsftpsrvrRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.rtc.ws.rtcownsftpsrvr.entity.Rtcownsftpsrvr;
-import com.rtc.ws.rtcownsftpsrvr.repository.RtcownsftpsrvrRepository;
-
+import java.util.List;
 
 
 @Service
@@ -14,9 +15,9 @@ public class RtcownsftpsrvrService {
 	@Autowired
 	private RtcownsftpsrvrRepository repository;
 	
-	public Iterable<Rtcownsftpsrvr> getRtcownsftpsrvrs() throws Exception{
-		Iterable<Rtcownsftpsrvr> data =  repository.findAll();
-		return data;
+	public Rtcownsftpsrvr getRtcownsftpsrvrs(){
+
+		return (Rtcownsftpsrvr) ((List)repository.findAll()).get(0);
 	}
 
 }

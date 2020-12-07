@@ -1,12 +1,13 @@
-package com.rtc.ws.rtcownsftpsrvr.controller;
+package com.rtc.ws.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rtc.ws.rtcownsftpsrvr.entity.Rtcownsftpsrvr;
-import com.rtc.ws.rtcownsftpsrvr.service.RtcownsftpsrvrService;
+import com.rtc.ws.entity.Rtcownsftpsrvr;
+import com.rtc.ws.service.RtcownsftpsrvrService;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -22,8 +23,10 @@ public class RtcownsftpsrvrController {
 	@ApiOperation(value = "Get SFTP server details")
 	@ApiResponses(value = { @ApiResponse(code = 500, message = "Server error"),
 			@ApiResponse(code = 200, message = "List of SFTP server details", response = Rtcownsftpsrvr.class, responseContainer = "List") })
-	public Iterable<Rtcownsftpsrvr> getSftpServerDetails() throws Exception {
-		return rtcownsftpsrvrSer.getRtcownsftpsrvrs();
+	public ResponseEntity getSftpServerDetails() throws Exception {
+
+			return ResponseEntity.ok(rtcownsftpsrvrSer.getRtcownsftpsrvrs());
+
 	}
 
 }
