@@ -1,8 +1,6 @@
 # Requirements
 
 
-## Swagger URL(remote): 
-
 ## Swagger URL(local): 
 http://localhost:8080/RTCWS/swagger-ui.html#
 
