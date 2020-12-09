@@ -1,14 +1,10 @@
 package com.rtc.ws.controller;
-<<<<<<< HEAD
 
-import org.springframework.beans.factory.annotation.Autowired;
-=======
 
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
->>>>>>> ed077959471a7875e1566c5cc5a7cf4fa3f392ed
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,22 +31,18 @@ public class RtcownsftpsrvrController {
 	@ApiResponses(value = { @ApiResponse(code = 500, message = "Server error"),
 			@ApiResponse(code = 200, message = "List of SFTP server details", response = Rtcownsftpsrvr.class, responseContainer = "List") })
 	public ResponseEntity getSftpServerDetails() throws Exception {
-<<<<<<< HEAD
 
-			return ResponseEntity.ok(rtcownsftpsrvrSer.getRtcownsftpsrvrs());
-
-=======
 		// using RtcownsftpsrvrService-->RtcownsftpsrvrRepository to get query to get
 		// the details of SFTP server List
 		Iterable<Rtcownsftpsrvr> result = null;
 		try {
 			result = rtcownsftpsrvrService.getRtcownsftpsrvrs();
+			return ResponseEntity.status(HttpStatus.OK).body(result);
 		} catch (Exception e) {
 			logger.severe("Path not found exception handled");
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("SFTP server details Not found");
 		}
-		return ResponseEntity.status(HttpStatus.OK).body(result);
->>>>>>> ed077959471a7875e1566c5cc5a7cf4fa3f392ed
+		
 	}
 
 }
