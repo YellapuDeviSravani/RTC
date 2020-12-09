@@ -34,12 +34,10 @@ public class RtcownsftpsrvrController {
 
 		// using RtcownsftpsrvrService-->RtcownsftpsrvrRepository to get query to get
 		// the details of SFTP server List
-		Iterable<Rtcownsftpsrvr> result = null;
 		try {
-			result = rtcownsftpsrvrService.getRtcownsftpsrvrs();
-			return ResponseEntity.status(HttpStatus.OK).body(result);
+			return ResponseEntity.status(HttpStatus.OK).body(rtcownsftpsrvrService.getRtcownsftpsrvrs());
 		} catch (Exception e) {
-			logger.severe("Path not found exception handled");
+			logger.severe("Status 404 send in the response");
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("SFTP server details Not found");
 		}
 		
