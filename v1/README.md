@@ -6,6 +6,7 @@ http://localhost:8080/RTCWS/swagger-ui.html#
 
 
 ### Webservices
+  1. getSftpServerDetails
 
 ### Project Structure 
 	
