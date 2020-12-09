@@ -30,14 +30,14 @@ public class RtcownsftpsrvrController {
 	@ApiOperation(value = "Get List of SFTP server details")
 	@ApiResponses(value = { @ApiResponse(code = 500, message = "Server error"),
 			@ApiResponse(code = 200, message = "List of SFTP server details", response = Rtcownsftpsrvr.class, responseContainer = "List") })
-	public ResponseEntity getSftpServerDetails() throws Exception {
+	public ResponseEntity<Object> getSftpServerDetails() throws Exception {
 
 		// using RtcownsftpsrvrService-->RtcownsftpsrvrRepository to get query to get
 		// the details of SFTP server List
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(rtcownsftpsrvrService.getRtcownsftpsrvrs());
 		} catch (Exception e) {
-			logger.severe("Path not found exception handled");
+			logger.severe("Status 404 not found send in the response");
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("SFTP server details Not found");
 		}
 		
